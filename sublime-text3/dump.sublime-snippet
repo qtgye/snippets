@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+echo '<pre style="display: table; text-align:left; font-size: 10px;">';
+var_dump($1);
+echo '</pre>';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dump</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

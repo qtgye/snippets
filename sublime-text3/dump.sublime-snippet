@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-echo '<pre style="display: table; text-align:left; font-size: 10px;">';
+echo '<pre style="display: table; text-align:left; font-size: 10px; color:black; backgroud: white">';
 var_dump($1);
 echo '</pre>';
 ]]></content>

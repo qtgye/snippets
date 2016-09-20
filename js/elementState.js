@@ -1,10 +1,13 @@
 /**
  *  Element State jQuery plugin
- *	Allows the use of data-state attribute instead of classes for declaring UI states
+ *  Author: Jayson Buquia <buquia.jace@gmail.com>
+ *  URL: https://github.com/qtgye/snippets/blob/master/js/elementState.js
+ * 
+ *  Allows the use of data-state attribute instead of classes for declaring UI states
  *
  * METHODS:
- * 	- hasState		: checks whether an element is at a given state
- * 	- addState		: adds a state to an element
+ * 	- hasState	: checks whether an element is at a given state
+ * 	- addState	: adds a state to an element
  * 	- removeState	: removes a state from an element
  * 	- toggleState	: toggles a state from an element
  *

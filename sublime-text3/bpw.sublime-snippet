@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-@include breakpoint(wide) {
-	$1
+@include breakpoint(${1:wide}) {
+	$2
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

@@ -43,21 +43,3 @@
     }
   }
 }
-
-@mixin respond( $styles-map ) {
-  @if not (type-of($styles-map) == map) { @error "$styles-map needs to be a map of properties and rules."; }
-  $breakpoints: $_breakpoints-names;
-  @for $i from 1 through length($breakpoints) {
-    $_name: nth($breakpoints, $i);
-    @include breakpoint($_name) {
-      @each $property, $rules-set in $styles-map {
-        @if type-of($rules-set) == list and $i <= length($rules-set){
-          #{$property}: #{nth($rules-set, $i)};
-        }
-        @else if $i == 1 {
-          #{$property}: #{$rules-set};
-        }
-      }
-    }
-  }
-}

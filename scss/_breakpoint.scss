@@ -58,16 +58,13 @@ USAGE:
   @else {
     @error "define-breakpoints(): Please provide a valid breakpoint map.";
   }
-
 }
 
-
 @mixin breakpoint( $breakpoint-args: false) {
-
   @if not variable-exists(_breakpoints-min) {@error "breakpoint(): Please define your breakpoints using define-breakpoints."};
   @if not $breakpoint-args {@error "breakpoint(): Please provide a valid breakpoint argument. e.g. breakpoint($name [, $scope])"};
-  
-  // Normalize args    
+
+  // Normalize args
   @if not (type-of($breakpoint-args) == list) { $breakpoint-args: append((), $breakpoint-args); }
 
   $_name: nth($breakpoint-args, 1);
@@ -82,10 +79,10 @@ USAGE:
   } @else {
     $_max: map-get($_breakpoints-max, $_name);
     $_max: if(type-of($_max) == number and unitless($_max), "#{$_max}px", $_max);
-    $query: if( $_scope == only and $_min, "(min-width:#{$_min}) and ", "" );
-    $query: if( $_max, "#{$query}(max-width:#{$_max})", "" );
+    $query: if( $_scope == only and $_min, "(min-width: #{$_min}) and ", "" );
+    $query: if( $_max, "#{$query}(max-width: #{$_max})", "" );
   }
-
+  @debug $query;
   @if $query {
     @media #{$query} {
       @content;

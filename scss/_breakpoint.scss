@@ -62,7 +62,7 @@ USAGE:
 
 @mixin breakpoint( $breakpoint-args: false) {
   @if not variable-exists(_breakpoints-min) {@error "breakpoint(): Please define your breakpoints using define-breakpoints."};
-  @if not $breakpoint-args {@error "breakpoint(): Please provide a valid breakpoint argument. e.g. breakpoint($name [, $scope])"};
+  @if not $breakpoint-args {@error "breakpoint(): Please provide a valid breakpoint argument. e.g. breakpoint($name [$scope])"};
 
   // Normalize args
   @if not (type-of($breakpoint-args) == list) { $breakpoint-args: append((), $breakpoint-args); }
@@ -82,7 +82,7 @@ USAGE:
     $query: if( $_scope == only and $_min, "(min-width: #{$_min}) and ", "" );
     $query: if( $_max, "#{$query}(max-width: #{$_max})", "" );
   }
-  @debug $query;
+
   @if $query {
     @media #{$query} {
       @content;
